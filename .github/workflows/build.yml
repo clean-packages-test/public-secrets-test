@@ -9,17 +9,18 @@ env:
 
 jobs:
   build:
-    run: |
-      if [ ! -z "${{ secrets.ORG_SECRET }}" ]; then
-      echo "Has ORG_SECRET"
-      else
-      echo "No ORG_SECRET"
-      fi
-      if [ !-z "${{ secrets.REPO_SECRET }}" ]; then
-      echo "Has REPO_SECRET"
-      else
-      echo "No REPO_SECRET"
-      fi
-      echo "${{ env.ORG_ENV }} $ORG_ENV"
-      echo "${{ env.REPO_ENV }} $REPO_ENV"
-      echo "${{ env.FLOW_ENV }} $FLOW_ENV"
+    steps:
+      run: |
+        if [ ! -z "${{ secrets.ORG_SECRET }}" ]; then
+        echo "Has ORG_SECRET"
+        else
+        echo "No ORG_SECRET"
+        fi
+        if [ !-z "${{ secrets.REPO_SECRET }}" ]; then
+        echo "Has REPO_SECRET"
+        else
+        echo "No REPO_SECRET"
+        fi
+        echo "${{ env.ORG_ENV }} $ORG_ENV"
+        echo "${{ env.REPO_ENV }} $REPO_ENV"
+        echo "${{ env.FLOW_ENV }} $FLOW_ENV"
